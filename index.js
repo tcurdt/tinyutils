@@ -23,6 +23,18 @@ module.exports.merge = function() {
   return r
 }
 
+module.exports.collect = function(fn) {
+  const items = []
+  fn(function(item) {
+    items.push(item)
+  })
+  return items
+}
+
+module.exports.collectAsync = function(fn) {
+  return Promise.resolve(collect(fn))
+}
+
 module.exports.max = function(values) {
   let m = undefined
   values.forEach(function(v) {

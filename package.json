@@ -1,6 +1,6 @@
 {
   "name": "@tcurdt/tinyutils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "some tiny utils for node",
   "author": "Torsten Curdt",
   "license": "Apache-2.0",
@@ -29,10 +29,10 @@
     "coverage-upload-codacy": "test -f ./coverage/lcov.info && cat ./coverage/lcov.info | codacy-coverage"
   },
   "devDependencies": {
-    "tape": "^4.2.0",
-    "blue-tape": "^0.1.10",
-    "istanbul": "^0.4.0",
-    "nyc": "^5.3.0",
+    "tape": "^4.5.1",
+    "blue-tape": "^0.2.0",
+    "istanbul": "^0.4.2",
+    "nyc": "^6.1.1",
     "faucet": "^0.0.1",
     "coveralls": "^2.11.6",
     "codecov.io": "^0.1.6",

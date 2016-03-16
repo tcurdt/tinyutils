@@ -25,11 +25,16 @@ Test('throw should throw an error', function(t) {
   t.end()
 })
 
-// Test('lazyLoad should create a lazy promise', function(t) {
-//   const l = _.lazyLoad({ body: 'text' })
-//   t.false(l.isFulfilled)
-//   t.end()
-// })
+Test('collect should collect iterative', function(t) {
+  const fixture = [ 0, 1, 2, 3 ]
+  const result = _.collect(function(add) {
+    fixture.forEach(function(n) {
+      add(n)
+    })
+  })
+  t.deepEqual(fixture, result)
+  t.end()
+})
 
 Test('merge should respect the order when merging', function(t) {
 
@@ -47,24 +52,6 @@ Test('merge should respect the order when merging', function(t) {
   t.end()
 })
 
-// Test('wrapping function', function(t) {
-
-//   const order = []
-//   const fn = _.wrap(function(){
-//     order.push(2)
-//   }, function(){
-//     order.push(1)
-//   }, function(){
-//     order.push(3)
-//   })
-
-//   fn()
-
-//   t.deepEqual(order, [1,2,3])
-
-//   t.end()
-// })
-
 Test('objectId', function(t) {
 
   t.equal(_.objectId(null), null)
@@ -75,3 +62,23 @@ Test('objectId', function(t) {
 
   t.end()
 })
+
+// Test('lazyLoad should create a lazy promise', function(t) {
+//   const l = _.lazyLoad({ body: 'text' })
+//   t.false(l.isFulfilled)
+//   t.end()
+// })
+
+// Test('wrapping function', function(t) {
+//   const order = []
+//   const fn = _.wrap(function(){
+//     order.push(2)
+//   }, function(){
+//     order.push(1)
+//   }, function(){
+//     order.push(3)
+//   })
+//   fn()
+//   t.deepEqual(order, [1,2,3])
+//   t.end()
+// })
